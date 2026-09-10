@@ -20,4 +20,10 @@ Remaps the **Caps Lock** key to **F19** using macOS `hidutil`.
            "$HOME/Library/LaunchAgents/com.local.KeyRemapping.plist"
    ```
 
+   > `bootstrap` will fail if the LaunchAgent is already registered. In that case, reapply the mapping with:
+   >
+   > ```bash
+   > launchctl kickstart "gui/$(id -u)/com.local.KeyRemapping"
+   > ```
+
 The remapping will be reapplied automatically whenever you log in.
